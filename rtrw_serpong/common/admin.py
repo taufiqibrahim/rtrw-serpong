@@ -20,10 +20,10 @@ class BaseAuditedModelAdmin(admin.ModelAdmin):
     # Override username as created_at and updated_at
     def save_model(self, request, obj, form, change):
         if not obj.pk:
-            obj.created_by = f"django/{request.user.username}"
+            obj.created_by = f"{request.user.username}"
 
         else:
-            obj.updated_by = f"django/{request.user.username}"
+            obj.updated_by = f"{request.user.username}"
 
         super().save_model(request, obj, form, change)
 
