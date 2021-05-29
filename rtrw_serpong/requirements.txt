@@ -1,2 +1,7 @@
 Django
+django-geojson
 django-jazzmin
+django-leaflet
+jsonfield
+Pillow
+python-dotenv

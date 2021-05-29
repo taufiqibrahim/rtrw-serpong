@@ -1,8 +1,11 @@
 from django.contrib import admin
+from leaflet.admin import LeafletGeoAdmin
+
+AUDIT_FIELDS = ['created_at', 'created_by', 'updated_at', 'updated_by', ]
 
 
 def auto_list_display(model):
-    audit_fields = ['created_at', 'created_by', 'updated_at', 'updated_by', ]
+    audit_fields = AUDIT_FIELDS
     try:
         list_fields = [col.name for col in model._meta.get_fields()
                        if col.name not in audit_fields]
@@ -23,3 +26,7 @@ class BaseAuditedModelAdmin(admin.ModelAdmin):
             obj.updated_by = f"django/{request.user.username}"
 
         super().save_model(request, obj, form, change)
+
+
+class BaseAuditedLeafletGeoModelAdmin(BaseAuditedModelAdmin, LeafletGeoAdmin):
+    readonly_fields = AUDIT_FIELDS

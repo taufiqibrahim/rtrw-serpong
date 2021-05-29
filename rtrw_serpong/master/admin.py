@@ -1,3 +1,5 @@
+import os
+from distutils.util import strtobool
 from django.contrib import admin
 from common.admin import auto_list_display
 from .models import Agama, Gelar, GolonganDarah, HubunganKeluarga, JenisKelamin, Pekerjaan, Pendidikan, PenyandangCacat, StatusKawin
@@ -20,46 +22,41 @@ class BaseAuditedModelAdmin(admin.ModelAdmin):
         super().save_model(request, obj, form, change)
 
 
-@admin.register(Agama)
-class AgamaAdmin(BaseAuditedModelAdmin):
-    pass
+DJANGO_ADMIN_ENABLE_MASTER = strtobool(os.environ['DJANGO_ADMIN_ENABLE_MASTER'])
 
+if DJANGO_ADMIN_ENABLE_MASTER:
+    @admin.register(Agama)
+    class AgamaAdmin(BaseAuditedModelAdmin):
+        pass
 
-@admin.register(Gelar)
-class GelarAdmin(BaseAuditedModelAdmin):
-    pass
+    @admin.register(Gelar)
+    class GelarAdmin(BaseAuditedModelAdmin):
+        pass
 
+    @admin.register(GolonganDarah)
+    class GolonganDarahAdmin(BaseAuditedModelAdmin):
+        pass
 
-@admin.register(GolonganDarah)
-class GolonganDarahAdmin(BaseAuditedModelAdmin):
-    pass
+    @admin.register(HubunganKeluarga)
+    class HubunganKeluargaAdmin(BaseAuditedModelAdmin):
+        pass
 
+    @admin.register(JenisKelamin)
+    class JenisKelaminAdmin(BaseAuditedModelAdmin):
+        pass
 
-@admin.register(HubunganKeluarga)
-class HubunganKeluargaAdmin(BaseAuditedModelAdmin):
-    pass
+    @admin.register(Pekerjaan)
+    class PekerjaanAdmin(BaseAuditedModelAdmin):
+        pass
 
+    @admin.register(Pendidikan)
+    class PendidikanAdmin(BaseAuditedModelAdmin):
+        pass
 
-@admin.register(JenisKelamin)
-class JenisKelaminAdmin(BaseAuditedModelAdmin):
-    pass
+    @admin.register(PenyandangCacat)
+    class PenyandangCacatAdmin(BaseAuditedModelAdmin):
+        pass
 
-
-@admin.register(Pekerjaan)
-class PekerjaanAdmin(BaseAuditedModelAdmin):
-    pass
-
-
-@admin.register(Pendidikan)
-class PendidikanAdmin(BaseAuditedModelAdmin):
-    pass
-
-
-@admin.register(PenyandangCacat)
-class PenyandangCacatAdmin(BaseAuditedModelAdmin):
-    pass
-
-
-@admin.register(StatusKawin)
-class StatusKawinAdmin(BaseAuditedModelAdmin):
-    pass
+    @admin.register(StatusKawin)
+    class StatusKawinAdmin(BaseAuditedModelAdmin):
+        pass
