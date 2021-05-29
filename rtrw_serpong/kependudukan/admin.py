@@ -23,6 +23,7 @@ class BiodataAdmin(BaseAuditedModelAdmin):
     list_display = auto_list_display(Biodata)
     list_display_links = ('nama_lengkap', )
     search_fields = ('nik', 'nama_lengkap', )
+    # autocomplete_fields = ('agama', )
 
 
 @admin.register(Keluarga)

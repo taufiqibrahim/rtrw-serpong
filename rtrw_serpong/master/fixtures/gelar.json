@@ -1,0 +1,26 @@
+[
+  {
+    "model": "master.gelar",
+    "pk": 1,
+    "fields": {
+      "nama": "Gelar Akademis",
+      "created_at": "2021-01-01"
+    }
+  },
+  {
+    "model": "master.gelar",
+    "pk": 2,
+    "fields": {
+      "nama": "Gelar Kebangsawanan",
+      "created_at": "2021-01-01"
+    }
+  },
+  {
+    "model": "master.gelar",
+    "pk": 3,
+    "fields": {
+      "nama": "Gelar Keagamaan",
+      "created_at": "2021-01-01"
+    }
+  }
+]

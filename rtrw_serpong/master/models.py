@@ -2,7 +2,18 @@ from django.db import models
 from common.models import BaseModel
 
 
-class Agama(BaseModel):
+class MasterModel(BaseModel):
+    nama = models.CharField(max_length=255, null=False, blank=False)
+
+    class Meta:
+        abstract = True
+        ordering = ['id', ]
+
+    def __str__(self) -> str:
+        return self.nama
+
+
+class Agama(MasterModel):
     nama = models.CharField(max_length=255, null=False, blank=False)
 
     class Meta:
@@ -10,7 +21,7 @@ class Agama(BaseModel):
         verbose_name_plural = 'Agama'
 
 
-class Gelar(BaseModel):
+class Gelar(MasterModel):
     nama = models.CharField(max_length=255, null=False, blank=False)
 
     class Meta:
@@ -18,7 +29,7 @@ class Gelar(BaseModel):
         verbose_name_plural = 'Gelar'
 
 
-class GolonganDarah(BaseModel):
+class GolonganDarah(MasterModel):
     nama = models.CharField(max_length=255, null=False, blank=False)
 
     class Meta:
@@ -26,7 +37,7 @@ class GolonganDarah(BaseModel):
         verbose_name_plural = 'Golongan Darah'
 
 
-class HubunganKeluarga(BaseModel):
+class HubunganKeluarga(MasterModel):
     nama = models.CharField(max_length=255, null=False, blank=False)
 
     class Meta:
@@ -34,7 +45,7 @@ class HubunganKeluarga(BaseModel):
         verbose_name_plural = 'Hubungan Keluarga'
 
 
-class JenisKelamin(BaseModel):
+class JenisKelamin(MasterModel):
     nama = models.CharField(max_length=255, null=False, blank=False)
 
     class Meta:
@@ -42,7 +53,7 @@ class JenisKelamin(BaseModel):
         verbose_name_plural = 'Jenis Kelamin'
 
 
-class Pekerjaan(BaseModel):
+class Pekerjaan(MasterModel):
     nama = models.CharField(max_length=255, null=False, blank=False)
 
     class Meta:
@@ -50,7 +61,7 @@ class Pekerjaan(BaseModel):
         verbose_name_plural = 'Pekerjaan'
 
 
-class Pendidikan(BaseModel):
+class Pendidikan(MasterModel):
     nama = models.CharField(max_length=255, null=False, blank=False)
 
     class Meta:
@@ -58,7 +69,7 @@ class Pendidikan(BaseModel):
         verbose_name_plural = 'Pendidikan'
 
 
-class PenyandangCacat(BaseModel):
+class PenyandangCacat(MasterModel):
     nama = models.CharField(max_length=255, null=False, blank=False)
 
     class Meta:
@@ -66,7 +77,7 @@ class PenyandangCacat(BaseModel):
         verbose_name_plural = 'Penyandang Cacat'
 
 
-class StatusKawin(BaseModel):
+class StatusKawin(MasterModel):
     nama = models.CharField(max_length=255, null=False, blank=False)
 
     class Meta:

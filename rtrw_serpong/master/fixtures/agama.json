@@ -1,0 +1,18 @@
+[
+  {
+    "model": "master.agama",
+    "pk": 1,
+    "fields": {
+      "nama": "Islam",
+      "created_at": "2021-01-01"
+    }
+  },
+  {
+    "model": "master.agama",
+    "pk": 2,
+    "fields": {
+      "nama": "Kristen",
+      "created_at": "2021-01-01"
+    }
+  }
+]

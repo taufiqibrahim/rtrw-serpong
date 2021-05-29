@@ -51,7 +51,7 @@ class Biodata(BaseModel):
     # AKTA_LHR          NUMBER(1),
     no_akta_lahir = models.CharField(max_length=120, null=True)
     golongan_darah = models.ForeignKey(GolonganDarah, on_delete=models.PROTECT)
-    agama = models.ForeignKey(Agama, on_delete=models.PROTECT)
+    agama = models.ForeignKey('master.Agama', on_delete=models.PROTECT)
     status_kawin = models.ForeignKey(StatusKawin, on_delete=models.PROTECT)
     # AKTA_KWN          NUMBER(1),
     no_akta_kawin = models.CharField(max_length=120, null=True)
