@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 import os
 from .jazzmin_settings import JAZZMIN_SETTINGS
+from .leaflet_settings import LEAFLET_CONFIG
 from distutils.util import strtobool
 from dotenv import load_dotenv
 from pathlib import Path
