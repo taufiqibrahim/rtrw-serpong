@@ -1,0 +1,82 @@
+[
+  {
+    "model": "master.pendidikan",
+    "pk": 1,
+    "fields": {
+      "nama": "Tidak/Belum Sekolah",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.pendidikan",
+    "pk": 2,
+    "fields": {
+      "nama": "Belum Tamat SD/Sederajat",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.pendidikan",
+    "pk": 3,
+    "fields": {
+      "nama": "Tamat SD/Sederajat",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.pendidikan",
+    "pk": 4,
+    "fields": {
+      "nama": "SLTP/Sederajat",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.pendidikan",
+    "pk": 5,
+    "fields": {
+      "nama": "SLTA/Sederajat",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.pendidikan",
+    "pk": 6,
+    "fields": {
+      "nama": "Diploma I/II",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.pendidikan",
+    "pk": 7,
+    "fields": {
+      "nama": "Akademi/Diploma III/Sarjana Muda",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.pendidikan",
+    "pk": 8,
+    "fields": {
+      "nama": "Diploma IV/Strata I",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.pendidikan",
+    "pk": 9,
+    "fields": {
+      "nama": "Strata II",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.pendidikan",
+    "pk": 10,
+    "fields": {
+      "nama": "Strata III",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  }
+]

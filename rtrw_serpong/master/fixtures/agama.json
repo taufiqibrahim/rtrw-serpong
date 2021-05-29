@@ -14,5 +14,45 @@
       "nama": "Kristen",
       "created_at": "2021-01-01 00:00:00"
     }
+  },
+  {
+    "model": "master.agama",
+    "pk": 3,
+    "fields": {
+      "nama": "Katholik",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.agama",
+    "pk": 4,
+    "fields": {
+      "nama": "Hindu",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.agama",
+    "pk": 5,
+    "fields": {
+      "nama": "Budha",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.agama",
+    "pk": 6,
+    "fields": {
+      "nama": "Kong Hucu",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.agama",
+    "pk": 7,
+    "fields": {
+      "nama": "Kepercayaan Terhadap Tuhan Yang Maha Esa",
+      "created_at": "2021-01-01 00:00:00"
+    }
   }
 ]
