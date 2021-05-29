@@ -6,6 +6,7 @@ from master.models import Agama, GolonganDarah, HubunganKeluarga, JenisKelamin, 
 class Keluarga(BaseModel):
     no_kk = models.CharField(verbose_name='No KK', max_length=16, null=False,
                              blank=False, unique=True)
+    # file_kk = models.FieldFile(upload_to='file_kk')
     nama_kepala = models.CharField(max_length=180)
     alamat = models.CharField(max_length=360)
     # NO_RT             NUMBER(3),
@@ -44,6 +45,7 @@ class Keluarga(BaseModel):
 class Biodata(BaseModel):
     nik = models.CharField(verbose_name='NIK', max_length=16,
                            null=False, blank=False, unique=True)
+    # file_ktp = models.FieldFile(upload_to='file_ktp')
     # NO_KTP            VARCHAR2(120 BYTE),
     # TMPT_SBL          VARCHAR2(900 BYTE),
     no_paspor = models.CharField(max_length=90, null=True)
