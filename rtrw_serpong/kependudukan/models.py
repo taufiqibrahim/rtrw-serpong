@@ -37,9 +37,13 @@ class Keluarga(BaseModel):
         verbose_name = 'Keluarga'
         verbose_name_plural = 'Keluarga'
 
+    def __str__(self) -> str:
+        return self.no_kk
+
 
 class Biodata(BaseModel):
-    nik = models.CharField(max_length=16, null=False, blank=False, unique=True)
+    nik = models.CharField(verbose_name='NIK', max_length=16,
+                           null=False, blank=False, unique=True)
     # NO_KTP            VARCHAR2(120 BYTE),
     # TMPT_SBL          VARCHAR2(900 BYTE),
     no_paspor = models.CharField(max_length=90, null=True)
@@ -65,19 +69,24 @@ class Biodata(BaseModel):
     # PNYDNG_CCT        NUMBER(1),
     pendidikan_akhir = models.ForeignKey(Pendidikan, on_delete=models.PROTECT)
     jenis_pekerjaan = models.ForeignKey(Pekerjaan, on_delete=models.PROTECT)
-    nik_ibu = models.CharField(max_length=16, null=False, blank=False)
+    nik_ibu = models.CharField(
+        verbose_name='NIK ibu', max_length=16, null=False, blank=False)
     nama_lengkap_ibu = models.CharField(max_length=180)
-    nik_ayah = models.CharField(max_length=16, null=False, blank=False)
+    nik_ayah = models.CharField(
+        verbose_name='NIK ayah', max_length=16, null=False, blank=False)
     nama_lengkap_ayah = models.CharField(max_length=180)
-    nama_ketua_rt = models.CharField(max_length=180, null=True, blank=True)
-    nama_ketua_rw = models.CharField(max_length=180, null=True, blank=True)
+    nama_ketua_rt = models.CharField(
+        verbose_name='Nama ketua RT', max_length=180, null=True, blank=True)
+    nama_ketua_rw = models.CharField(
+        verbose_name='Nama ketua RW', max_length=180, null=True, blank=True)
     # NAMA_PET_REG      VARCHAR2(180 BYTE),
     # NIP_PET_REG       NUMBER,
     # NAMA_PET_ENTRI    VARCHAR2(180 BYTE),
     # NIP_PET_ENTRI     NUMBER,
     # TGL_ENTRI         DATE,
-    keluarga = models.ForeignKey(Keluarga, on_delete=models.PROTECT)
-    no_kk = models.CharField(verbose_name='No KK', max_length=16, null=True, blank=True, )
+    keluarga = models.ForeignKey(Keluarga, on_delete=models.PROTECT, verbose_name='No KK')
+    # no_kk = models.CharField(verbose_name='No KK',
+    #                          max_length=16, null=True, blank=True, )
     # JENIS_BNTU        NUMBER(2),
     # NO_PROP           NUMBER(2),
     # NO_KAB            NUMBER(2),
