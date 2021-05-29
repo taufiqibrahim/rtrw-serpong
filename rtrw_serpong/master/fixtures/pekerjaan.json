@@ -1,0 +1,714 @@
+[
+  {
+    "model": "master.pekerjaan",
+    "pk": 1,
+    "fields": {
+      "nama": "Belum/Tidak Bekerja",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.pekerjaan",
+    "pk": 2,
+    "fields": {
+      "nama": "Mengurus Rumah Tangga",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.pekerjaan",
+    "pk": 3,
+    "fields": {
+      "nama": "Pelajar/Mahasiswa",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.pekerjaan",
+    "pk": 4,
+    "fields": {
+      "nama": "Pensiunan",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.pekerjaan",
+    "pk": 5,
+    "fields": {
+      "nama": "Pegawai Negeri Sipil (PNS)",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.pekerjaan",
+    "pk": 6,
+    "fields": {
+      "nama": "Tentara Nasional Indonesia (TNI)",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.pekerjaan",
+    "pk": 7,
+    "fields": {
+      "nama": "Kepolisian RI  (POLRI)",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.pekerjaan",
+    "pk": 8,
+    "fields": {
+      "nama": "Perdagangan",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.pekerjaan",
+    "pk": 9,
+    "fields": {
+      "nama": "Petani/Pekebun",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.pekerjaan",
+    "pk": 10,
+    "fields": {
+      "nama": "Peternak",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.pekerjaan",
+    "pk": 11,
+    "fields": {
+      "nama": "Nelayan/Perikanan",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.pekerjaan",
+    "pk": 12,
+    "fields": {
+      "nama": "Industri",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.pekerjaan",
+    "pk": 13,
+    "fields": {
+      "nama": "Konstruksi",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.pekerjaan",
+    "pk": 14,
+    "fields": {
+      "nama": "Transportasi",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.pekerjaan",
+    "pk": 15,
+    "fields": {
+      "nama": "Karyawan Swasta",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.pekerjaan",
+    "pk": 16,
+    "fields": {
+      "nama": "Karyawan BUMN",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.pekerjaan",
+    "pk": 17,
+    "fields": {
+      "nama": "Karyawan BUMD",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.pekerjaan",
+    "pk": 18,
+    "fields": {
+      "nama": "Karyawan Honorer",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.pekerjaan",
+    "pk": 19,
+    "fields": {
+      "nama": "Buruh Harian Lepas",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.pekerjaan",
+    "pk": 20,
+    "fields": {
+      "nama": "Buruh Tani/Perkebunan",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.pekerjaan",
+    "pk": 21,
+    "fields": {
+      "nama": "Buruh Nelayan/Perikanan",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.pekerjaan",
+    "pk": 22,
+    "fields": {
+      "nama": "Buruh Peternakan",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.pekerjaan",
+    "pk": 23,
+    "fields": {
+      "nama": "Pembantu Rumah Tangga",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.pekerjaan",
+    "pk": 24,
+    "fields": {
+      "nama": "Tukang Cukur",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.pekerjaan",
+    "pk": 25,
+    "fields": {
+      "nama": "Tukang Listrik",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.pekerjaan",
+    "pk": 26,
+    "fields": {
+      "nama": "Tukang Batu",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.pekerjaan",
+    "pk": 27,
+    "fields": {
+      "nama": "Tukang Kayu",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.pekerjaan",
+    "pk": 28,
+    "fields": {
+      "nama": "Tukang Sol Sepatu",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.pekerjaan",
+    "pk": 29,
+    "fields": {
+      "nama": "Tukang Las/Pandai Besi",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.pekerjaan",
+    "pk": 30,
+    "fields": {
+      "nama": "Tukang Jahit",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.pekerjaan",
+    "pk": 31,
+    "fields": {
+      "nama": "Tukang Gigi",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.pekerjaan",
+    "pk": 32,
+    "fields": {
+      "nama": "Penata Rias",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.pekerjaan",
+    "pk": 33,
+    "fields": {
+      "nama": "Penata Busana",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.pekerjaan",
+    "pk": 34,
+    "fields": {
+      "nama": "Penata Rambut",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.pekerjaan",
+    "pk": 35,
+    "fields": {
+      "nama": "Mekanik",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.pekerjaan",
+    "pk": 36,
+    "fields": {
+      "nama": "Seniman",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.pekerjaan",
+    "pk": 37,
+    "fields": {
+      "nama": "Tabib",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.pekerjaan",
+    "pk": 38,
+    "fields": {
+      "nama": "Paraji",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.pekerjaan",
+    "pk": 39,
+    "fields": {
+      "nama": "Perancang Busana",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.pekerjaan",
+    "pk": 40,
+    "fields": {
+      "nama": "Penterjemah",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.pekerjaan",
+    "pk": 41,
+    "fields": {
+      "nama": "Imam Masjid",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.pekerjaan",
+    "pk": 42,
+    "fields": {
+      "nama": "Pendeta",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.pekerjaan",
+    "pk": 43,
+    "fields": {
+      "nama": "Pastor",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.pekerjaan",
+    "pk": 44,
+    "fields": {
+      "nama": "Wartawan",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.pekerjaan",
+    "pk": 45,
+    "fields": {
+      "nama": "Ustadz/Mubaligh",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.pekerjaan",
+    "pk": 46,
+    "fields": {
+      "nama": "Juru Masak",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.pekerjaan",
+    "pk": 47,
+    "fields": {
+      "nama": "Promotor Acara",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.pekerjaan",
+    "pk": 48,
+    "fields": {
+      "nama": "Anggota DPR-RI",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.pekerjaan",
+    "pk": 49,
+    "fields": {
+      "nama": "Anggota DPD",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.pekerjaan",
+    "pk": 50,
+    "fields": {
+      "nama": "Anggota BPK",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.pekerjaan",
+    "pk": 51,
+    "fields": {
+      "nama": "Presiden",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.pekerjaan",
+    "pk": 52,
+    "fields": {
+      "nama": "Wakil Presiden",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.pekerjaan",
+    "pk": 53,
+    "fields": {
+      "nama": "Anggota Mahkamah Konstitusi",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.pekerjaan",
+    "pk": 54,
+    "fields": {
+      "nama": "Anggota Kabinet/Kementrian",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.pekerjaan",
+    "pk": 55,
+    "fields": {
+      "nama": "Duta Besar",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.pekerjaan",
+    "pk": 56,
+    "fields": {
+      "nama": "Gubernur",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.pekerjaan",
+    "pk": 57,
+    "fields": {
+      "nama": "Wakil Gubernur",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.pekerjaan",
+    "pk": 58,
+    "fields": {
+      "nama": "Bupati",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.pekerjaan",
+    "pk": 59,
+    "fields": {
+      "nama": "Wakil Bupati",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.pekerjaan",
+    "pk": 60,
+    "fields": {
+      "nama": "Walikota",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.pekerjaan",
+    "pk": 61,
+    "fields": {
+      "nama": "Wakil walikota",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.pekerjaan",
+    "pk": 62,
+    "fields": {
+      "nama": "Anggota DPRD Prop.",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.pekerjaan",
+    "pk": 63,
+    "fields": {
+      "nama": "Anggota DPRD Kab./Kota Profesi  Selain Pegawai Negeri dan Mandiri",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.pekerjaan",
+    "pk": 64,
+    "fields": {
+      "nama": "Dosen",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.pekerjaan",
+    "pk": 65,
+    "fields": {
+      "nama": "Guru",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.pekerjaan",
+    "pk": 66,
+    "fields": {
+      "nama": "Pilot",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.pekerjaan",
+    "pk": 67,
+    "fields": {
+      "nama": "Pengacara",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.pekerjaan",
+    "pk": 68,
+    "fields": {
+      "nama": "Notaris",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.pekerjaan",
+    "pk": 69,
+    "fields": {
+      "nama": "Arsitek",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.pekerjaan",
+    "pk": 70,
+    "fields": {
+      "nama": "Akuntan",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.pekerjaan",
+    "pk": 71,
+    "fields": {
+      "nama": "Konsultan",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.pekerjaan",
+    "pk": 72,
+    "fields": {
+      "nama": "Dokter",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.pekerjaan",
+    "pk": 73,
+    "fields": {
+      "nama": "Bidan",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.pekerjaan",
+    "pk": 74,
+    "fields": {
+      "nama": "Perawat",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.pekerjaan",
+    "pk": 75,
+    "fields": {
+      "nama": "Apoteker",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.pekerjaan",
+    "pk": 76,
+    "fields": {
+      "nama": "Psikiater/Psikolog",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.pekerjaan",
+    "pk": 77,
+    "fields": {
+      "nama": "Penyiar Televisi",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.pekerjaan",
+    "pk": 78,
+    "fields": {
+      "nama": "Penyiar Radio",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.pekerjaan",
+    "pk": 79,
+    "fields": {
+      "nama": "Pelaut",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.pekerjaan",
+    "pk": 80,
+    "fields": {
+      "nama": "Peneliti",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.pekerjaan",
+    "pk": 81,
+    "fields": {
+      "nama": "Sopir",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.pekerjaan",
+    "pk": 82,
+    "fields": {
+      "nama": "Pialang",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.pekerjaan",
+    "pk": 83,
+    "fields": {
+      "nama": "Paranormal",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.pekerjaan",
+    "pk": 84,
+    "fields": {
+      "nama": "Pedagang",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.pekerjaan",
+    "pk": 85,
+    "fields": {
+      "nama": "Perangkat Desa",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.pekerjaan",
+    "pk": 86,
+    "fields": {
+      "nama": "Kepala desa",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.pekerjaan",
+    "pk": 87,
+    "fields": {
+      "nama": "Biarawati",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.pekerjaan",
+    "pk": 88,
+    "fields": {
+      "nama": "Wiraswasta",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.pekerjaan",
+    "pk": 89,
+    "fields": {
+      "nama": "Lainnya, Sebutkan",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  }
+]

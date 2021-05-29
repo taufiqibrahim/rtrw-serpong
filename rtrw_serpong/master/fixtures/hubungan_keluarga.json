@@ -1,0 +1,90 @@
+[
+  {
+    "model": "master.hubungankeluarga",
+    "pk": 1,
+    "fields": {
+      "nama": "Kepala keluarga",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.hubungankeluarga",
+    "pk": 2,
+    "fields": {
+      "nama": "Suami",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.hubungankeluarga",
+    "pk": 3,
+    "fields": {
+      "nama": "Istri",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.hubungankeluarga",
+    "pk": 4,
+    "fields": {
+      "nama": "Anak",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.hubungankeluarga",
+    "pk": 5,
+    "fields": {
+      "nama": "Menantu",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.hubungankeluarga",
+    "pk": 6,
+    "fields": {
+      "nama": "Cucu",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.hubungankeluarga",
+    "pk": 7,
+    "fields": {
+      "nama": "Orang Tua",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.hubungankeluarga",
+    "pk": 8,
+    "fields": {
+      "nama": "Mertua",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.hubungankeluarga",
+    "pk": 9,
+    "fields": {
+      "nama": "Famili Lain",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.hubungankeluarga",
+    "pk": 10,
+    "fields": {
+      "nama": "Pembantu",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.hubungankeluarga",
+    "pk": 11,
+    "fields": {
+      "nama": "Lainnya",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  }
+]

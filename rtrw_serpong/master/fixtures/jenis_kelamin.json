@@ -1,17 +1,17 @@
 [
   {
-    "model": "master.agama",
+    "model": "master.jeniskelamin",
     "pk": 1,
     "fields": {
-      "nama": "Islam",
+      "nama": "Laki Laki",
       "created_at": "2021-01-01 00:00:00"
     }
   },
   {
-    "model": "master.agama",
+    "model": "master.jeniskelamin",
     "pk": 2,
     "fields": {
-      "nama": "Kristen",
+      "nama": "Perempuan",
       "created_at": "2021-01-01 00:00:00"
     }
   }
