@@ -163,5 +163,8 @@ Thumbs.db
 
 # secrets
 .env
+env.py
+allauth_settings.py
+wagtail_settings.py
 
 # End of https://www.toptal.com/developers/gitignore/api/django

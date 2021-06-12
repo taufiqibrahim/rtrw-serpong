@@ -1,0 +1,42 @@
+[
+  {
+    "model": "master.statuspenguasaantempattinggal",
+    "pk": 1,
+    "fields": {
+      "nama": "Milik Sendiri",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.statuspenguasaantempattinggal",
+    "pk": 2,
+    "fields": {
+      "nama": "Kontrak",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.statuspenguasaantempattinggal",
+    "pk": 3,
+    "fields": {
+      "nama": "Sewa",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.statuspenguasaantempattinggal",
+    "pk": 4,
+    "fields": {
+      "nama": "Rumah Dinas",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.statuspenguasaantempattinggal",
+    "pk": 5,
+    "fields": {
+      "nama": "Lainnya",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  }
+]

@@ -48,23 +48,23 @@ class Biodata(BaseModel):
     # file_ktp = models.FieldFile(upload_to='file_ktp')
     # NO_KTP            VARCHAR2(120 BYTE),
     # TMPT_SBL          VARCHAR2(900 BYTE),
-    no_paspor = models.CharField(max_length=90, null=True)
+    no_paspor = models.CharField(max_length=90, null=True, blank=True)
     # TGL_AKH_PASPOR    DATE,
     nama_lengkap = models.CharField(max_length=180)
     jenis_kelamin = models.ForeignKey(JenisKelamin, on_delete=models.PROTECT)
     tempat_lahir = models.CharField(max_length=180)
     tanggal_lahir = models.DateField()
     # AKTA_LHR          NUMBER(1),
-    no_akta_lahir = models.CharField(max_length=120, null=True)
+    no_akta_lahir = models.CharField(max_length=120, null=True, blank=True)
     golongan_darah = models.ForeignKey(GolonganDarah, on_delete=models.PROTECT)
     agama = models.ForeignKey('master.Agama', on_delete=models.PROTECT)
     status_kawin = models.ForeignKey(StatusKawin, on_delete=models.PROTECT)
     # AKTA_KWN          NUMBER(1),
-    no_akta_kawin = models.CharField(max_length=120, null=True)
-    tanggal_kawin = models.DateField()
+    no_akta_kawin = models.CharField(max_length=120, null=True, blank=True)
+    tanggal_kawin = models.DateField(null=True, blank=True)
     # AKTA_CRAI         NUMBER(1),
-    no_akta_cerai = models.CharField(max_length=120, null=True)
-    tanggal_cerai = models.DateField()
+    no_akta_cerai = models.CharField(max_length=120, null=True, blank=True)
+    tanggal_cerai = models.DateField(null=True, blank=True)
     stat_hubungan_keluarga = models.ForeignKey(
         HubunganKeluarga, on_delete=models.PROTECT)
     # KLAIN_FSK         NUMBER(1),
@@ -86,7 +86,8 @@ class Biodata(BaseModel):
     # NAMA_PET_ENTRI    VARCHAR2(180 BYTE),
     # NIP_PET_ENTRI     NUMBER,
     # TGL_ENTRI         DATE,
-    keluarga = models.ForeignKey(Keluarga, on_delete=models.PROTECT, verbose_name='No KK')
+    keluarga = models.ForeignKey(
+        Keluarga, on_delete=models.PROTECT, verbose_name='No KK')
     # no_kk = models.CharField(verbose_name='No KK',
     #                          max_length=16, null=True, blank=True, )
     # JENIS_BNTU        NUMBER(2),
@@ -124,3 +125,6 @@ class Biodata(BaseModel):
     class Meta:
         verbose_name = 'Biodata'
         verbose_name_plural = 'Biodata'
+
+    def __str__(self) -> str:
+        return self.nik

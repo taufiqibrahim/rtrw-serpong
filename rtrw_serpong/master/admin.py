@@ -2,7 +2,7 @@ import os
 from distutils.util import strtobool
 from django.contrib import admin
 from common.admin import auto_list_display
-from .models import Agama, Gelar, GolonganDarah, HubunganKeluarga, JenisKelamin, Pekerjaan, Pendidikan, PenyandangCacat, StatusKawin
+from .models import Agama, Gelar, GolonganDarah, HubunganKeluarga, JenisKelamin, Pekerjaan, Pendidikan, PenyandangCacat, StatusKawin, StatusPenguasaanTempatTinggal
 
 
 class BaseAuditedModelAdmin(admin.ModelAdmin):
@@ -59,4 +59,8 @@ if DJANGO_ADMIN_ENABLE_MASTER:
 
     @admin.register(StatusKawin)
     class StatusKawinAdmin(BaseAuditedModelAdmin):
+        pass
+
+    @admin.register(StatusPenguasaanTempatTinggal)
+    class StatusPenguasaanTempatTinggalAdmin(BaseAuditedModelAdmin):
         pass

@@ -11,8 +11,11 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 import os
+from .env import *
+from .allauth_settings import SOCIALACCOUNT_PROVIDERS
 from .jazzmin_settings import JAZZMIN_SETTINGS
 from .leaflet_settings import LEAFLET_CONFIG
+from .wagtail_settings import WAGTAIL_INSTALLED_APPS, WAGTAIL_MIDDLEWARE, WAGTAIL_SITE_NAME
 from distutils.util import strtobool
 from dotenv import load_dotenv
 from pathlib import Path
@@ -21,8 +24,12 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Load configuration from .env
-ENV_PATH = os.path.join(BASE_DIR, ".env")
-load_dotenv(ENV_PATH)
+# ENV_PATH = os.path.join(BASE_DIR, ".env")
+# load_dotenv(ENV_PATH)
+
+os.environ['DJANGO_SECRET_KEY'] = DJANGO_SECRET_KEY
+os.environ['DJANGO_DEBUG'] = DJANGO_DEBUG
+os.environ['DJANGO_ADMIN_ENABLE_MASTER'] = DJANGO_ADMIN_ENABLE_MASTER
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
@@ -31,7 +38,7 @@ load_dotenv(ENV_PATH)
 SECRET_KEY = os.environ['DJANGO_SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ['DJANGO_DEBUG']
+DEBUG = strtobool(os.environ['DJANGO_DEBUG'])
 
 ALLOWED_HOSTS = []
 
@@ -46,11 +53,22 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.facebook',
+    'allauth.socialaccount.providers.google',
+
     'leaflet',
     'master',
     'kependudukan',
     'tata_ruang',
+    # 'aplikasi',
 ]
+
+INSTALLED_APPS += WAGTAIL_INSTALLED_APPS
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -61,6 +79,8 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+MIDDLEWARE += WAGTAIL_MIDDLEWARE
 
 ROOT_URLCONF = 'rtrw_serpong.urls'
 
@@ -139,3 +159,18 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 LOCALE_PATHS = [os.path.join(BASE_DIR, 'locale')]
+
+SITE_ID = 1
+
+AUTHENTICATION_BACKENDS = [
+    # Needed to login by username in Django admin, regardless of `allauth`
+    'django.contrib.auth.backends.ModelBackend',
+
+    # `allauth` specific authentication methods, such as login by e-mail
+    'allauth.account.auth_backends.AuthenticationBackend',
+]
+
+if DEBUG:
+    STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+    MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+    MEDIA_URL = '/media/'

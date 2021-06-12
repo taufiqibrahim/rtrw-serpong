@@ -85,6 +85,14 @@ class StatusKawin(MasterModel):
         verbose_name_plural = 'Status Kawin'
 
 
+class StatusPenguasaanTempatTinggal(MasterModel):
+    nama = models.CharField(max_length=255, null=False, blank=False)
+
+    class Meta:
+        verbose_name = 'Status Penguasaan Tempat Tinggal'
+        verbose_name_plural = 'Status Penguasaan Tempat Tinggal'
+
+
 class FungsiBangunan(MasterModel):
     nama = models.CharField(max_length=255, null=False, blank=False)
 

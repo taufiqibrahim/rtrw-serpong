@@ -22,7 +22,7 @@ class BidangTanah(BaseModel):
 
 class Bangunan(BaseModel):
     bidang_tanah = models.ForeignKey(
-        BidangTanah, on_delete=models.PROTECT, null=False)
+        BidangTanah, on_delete=models.PROTECT, null=True, blank=True)
     alamat = models.CharField(max_length=255)
     geom = PolygonField(null=True)
 
