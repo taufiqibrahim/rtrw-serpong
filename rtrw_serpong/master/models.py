@@ -83,3 +83,11 @@ class StatusKawin(MasterModel):
     class Meta:
         verbose_name = 'Status Kawin'
         verbose_name_plural = 'Status Kawin'
+
+
+class FungsiBangunan(MasterModel):
+    nama = models.CharField(max_length=255, null=False, blank=False)
+
+    class Meta:
+        verbose_name = 'Fungsi Bangunan'
+        verbose_name_plural = 'Fungsi Bangunan'
