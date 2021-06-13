@@ -99,3 +99,11 @@ class FungsiBangunan(MasterModel):
     class Meta:
         verbose_name = 'Fungsi Bangunan'
         verbose_name_plural = 'Fungsi Bangunan'
+
+
+class TipeBidangTanah(MasterModel):
+    nama = models.CharField(max_length=255, null=False, blank=False)
+
+    class Meta:
+        verbose_name = 'Tipe Bidang Tanah'
+        verbose_name_plural = 'Tipe Bidang Tanah'

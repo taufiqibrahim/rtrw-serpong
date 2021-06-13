@@ -4,16 +4,20 @@ from django.db import models
 
 
 class BidangTanah(BaseModel):
+    tipe_bidang_tanah = models.ForeignKey('master.TipeBidangTanah',
+                                          on_delete=models.PROTECT)
     deskripsi = models.TextField()
-    picture = models.ImageField()
+    picture = models.ImageField(null=True, blank=True)
     geom = PolygonField()
+    induk = models.ForeignKey('self', null=True, blank=True, on_delete=models.PROTECT,
+                              help_text="Bidang tanah induk yang mencakupi")
 
     class Meta:
         verbose_name = 'Bidang Tanah'
         verbose_name_plural = 'Bidang Tanah'
 
     def __str__(self) -> str:
-        return str(self.pk)
+        return f"{self.deskripsi} ({str(self.pk)})"
 
     @property
     def picture_url(self):

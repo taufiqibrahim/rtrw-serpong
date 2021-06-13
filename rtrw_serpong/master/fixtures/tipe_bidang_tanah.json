@@ -1,0 +1,42 @@
+[
+  {
+    "model": "master.tipebidangtanah",
+    "pk": 1,
+    "fields": {
+      "nama": "Wilayah Desa",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.tipebidangtanah",
+    "pk": 2,
+    "fields": {
+      "nama": "Wilayah RW",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.tipebidangtanah",
+    "pk": 3,
+    "fields": {
+      "nama": "Wilayah RT",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.tipebidangtanah",
+    "pk": 4,
+    "fields": {
+      "nama": "Cluster/Komplek Perumahan",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "master.tipebidangtanah",
+    "pk": 5,
+    "fields": {
+      "nama": "Lainnya",
+      "created_at": "2021-01-01 00:00:00"
+    }
+  }
+]
