@@ -1,4 +1,5 @@
 Django
+django-import-export
 django-geojson
 django-jazzmin
 django-leaflet

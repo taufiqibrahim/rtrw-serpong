@@ -1,4 +1,5 @@
 from django.db import models
+from django import forms
 from common.models import BaseModel
 from master.models import Agama, GolonganDarah, HubunganKeluarga, JenisKelamin, Pendidikan, Pekerjaan, StatusKawin
 
@@ -128,3 +129,25 @@ class Biodata(BaseModel):
 
     def __str__(self) -> str:
         return self.nik
+
+
+class Domisili(BaseModel):
+    biodata = models.ForeignKey(Biodata, on_delete=models.PROTECT)
+    tanggal_mulai_tinggal = models.DateField()
+    tanggal_akhir_tinggal = models.DateField(
+        default=None, null=True, blank=True)
+
+    class Meta:
+        verbose_name = 'Domisili'
+        verbose_name_plural = 'Domisili'
+
+    def __str__(self) -> str:
+        return str(self.pk)
+
+    def clean(self):
+        tanggal_mulai_tinggal = self.tanggal_mulai_tinggal
+        tanggal_akhir_tinggal = self.tanggal_akhir_tinggal
+        if tanggal_akhir_tinggal:
+            if tanggal_akhir_tinggal < tanggal_mulai_tinggal:
+                raise forms.ValidationError(
+                    "End date should be greater than start date.")

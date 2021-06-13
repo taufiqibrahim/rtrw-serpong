@@ -1,6 +1,8 @@
 from django.contrib import admin
 from common.admin import auto_list_display
-from .models import Biodata, Keluarga
+from import_export.admin import ImportExportModelAdmin
+from .models import Biodata, Domisili, Keluarga
+from .resources import BiodataResource
 
 
 class BaseAuditedModelAdmin(admin.ModelAdmin):
@@ -18,16 +20,29 @@ class BaseAuditedModelAdmin(admin.ModelAdmin):
         super().save_model(request, obj, form, change)
 
 
-@admin.register(Biodata)
-class BiodataAdmin(BaseAuditedModelAdmin):
-    list_display = auto_list_display(Biodata)
-    list_display_links = ('nama_lengkap', )
-    search_fields = ('nik', 'nama_lengkap', )
-    # autocomplete_fields = ('agama', )
-
-
 @admin.register(Keluarga)
 class KeluargaAdmin(BaseAuditedModelAdmin):
     list_display = ('no_kk', 'nama_kepala', 'alamat')
     # list_display_links = ('no_kk', )
     # search_fields = ('no_kk', 'nama_kepala', )
+
+
+@admin.register(Domisili)
+class DomisiliAdmin(BaseAuditedModelAdmin):
+    pass
+
+
+class DomisiliInlineAdmin(admin.TabularInline):
+    model = Domisili
+    extra = 0
+    fields = ('tanggal_mulai_tinggal', 'tanggal_akhir_tinggal', )
+
+
+@admin.register(Biodata)
+class BiodataAdmin(BaseAuditedModelAdmin, ImportExportModelAdmin):
+    resource_class = BiodataResource
+    list_display = ('id', 'nama_lengkap', 'nik', )
+    list_display_links = ('nama_lengkap', )
+    search_fields = ('nik', 'nama_lengkap', )
+    # autocomplete_fields = ('agama', )
+    inlines = [DomisiliInlineAdmin, ]

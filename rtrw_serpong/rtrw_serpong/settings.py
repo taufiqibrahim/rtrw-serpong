@@ -62,6 +62,8 @@ INSTALLED_APPS = [
     'allauth.socialaccount.providers.google',
 
     'leaflet',
+    'import_export',
+
     'master',
     'kependudukan',
     'tata_ruang',
