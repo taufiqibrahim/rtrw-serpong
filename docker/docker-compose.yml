@@ -1,0 +1,93 @@
+version: "3"
+
+services:
+
+#   redis:
+#     restart: always
+#     container_name: redis
+#     image: redis
+#     networks:
+#       - django-net
+#     logging:
+#       driver: "json-file"
+#       options:
+#         max-size: "50m"
+
+  django:
+    restart: always
+    image: django
+    container_name: django
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    entrypoint: docker/entrypoint.sh
+    networks:
+      - nginx_net
+      - django-net
+    ports:
+      - 8000:8000
+    volumes:
+      - ./rtrw_serpong:/code/
+    #   - django_static_volume:/code/bizzydataoperation/static
+    # depends_on:
+    #   - redis
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "50m"
+
+#   celery:
+#     restart: always
+#     container_name: celery
+#     build:
+#       context: .
+#       dockerfile: ./Dockerfile
+#     command: celery -A bizzydataoperation worker
+#     volumes:
+#       - ./bizzydataoperation:/code/bizzydataoperation/
+#     environment:
+#       - CELERY_BROKER=redis://redis:6379/0
+#       - CELERY_BACKEND=redis://redis:6379/0
+#     depends_on:
+#       - django
+#       - redis
+#     networks:
+#       - django-net
+#     logging:
+#       driver: "json-file"
+#       options:
+#         max-size: "50m"
+
+#   flower:
+#     restart: always
+#     container_name: flower
+#     build:
+#       context: .
+#       dockerfile: ./Dockerfile
+#     command:  flower -A bizzydataoperation --port=5555 --broker=redis://redis:6379/0
+#     ports:
+#       - 5555:5555
+#     volumes:
+#       - ./bizzydataoperation:/code/bizzydataoperation/
+#     environment:
+#       - CELERY_BROKER=redis://redis:6379/0
+#       - CELERY_BACKEND=redis://redis:6379/0
+#     depends_on:
+#       - django
+#       - redis
+#       - celery
+#     networks:
+#       - django-net
+#     logging:
+#       driver: "json-file"
+#       options:
+#         max-size: "50m"
+
+
+networks:
+  django-net:
+  nginx_net:
+    external: true
+
+volumes:
+  django_static_volume:
