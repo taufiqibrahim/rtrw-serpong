@@ -1,0 +1,13 @@
+---
+# Untuk mengunggah default group ini dengan
+# python manage.py loadperms default-permissions.yaml
+groups:
+  - name: Ketua RW
+    permissions:
+      kependudukan:
+         - biodata.view_biodata
+         - biodata.add_biodata
+         - biodata.change_biodata
+  - name: Ketua RT
+  - name: Warga
+

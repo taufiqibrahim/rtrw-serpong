@@ -63,6 +63,10 @@ INSTALLED_APPS = [
 
     'leaflet',
     'import_export',
+    'django_perms_provisioner',
+
+    # 'cms',
+    'home',
 
     'master',
     'kependudukan',
@@ -89,7 +93,7 @@ ROOT_URLCONF = 'rtrw_serpong.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['templates', ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -176,3 +180,5 @@ if DEBUG:
     STATIC_ROOT = os.path.join(BASE_DIR, 'static')
     MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
     MEDIA_URL = '/media/'
+
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'

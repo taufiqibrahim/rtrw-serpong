@@ -3,6 +3,11 @@ django-import-export
 django-geojson
 django-jazzmin
 django-leaflet
+django_perms_provisioner
+django-storages
 jsonfield
 Pillow
 python-dotenv
+wagtail
+wagtailcodeblock
+wagtailmenus
