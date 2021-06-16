@@ -14,4 +14,4 @@ class BidangTanahAdmin(BaseAuditedLeafletGeoModelAdmin):
 
 @admin.register(tata_ruang_models.Bangunan)
 class BangunanAdmin(BaseAuditedLeafletGeoModelAdmin):
-    pass
+    list_display = ('id', 'pemilik', 'alamat', 'fungsi',)

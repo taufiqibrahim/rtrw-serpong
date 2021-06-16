@@ -1,8 +1,9 @@
 from django.contrib import admin
+from import_export import resources
 from common.admin import auto_list_display
 from import_export.admin import ImportExportModelAdmin
 from .models import Biodata, Domisili, Keluarga
-from .resources import BiodataResource
+from .resources import BiodataResource, KeluargaResource
 
 
 class BaseAuditedModelAdmin(admin.ModelAdmin):
@@ -21,10 +22,10 @@ class BaseAuditedModelAdmin(admin.ModelAdmin):
 
 
 @admin.register(Keluarga)
-class KeluargaAdmin(BaseAuditedModelAdmin):
+class KeluargaAdmin(BaseAuditedModelAdmin, ImportExportModelAdmin):
+    resource_class = KeluargaResource
     list_display = ('no_kk', 'nama_kepala', 'alamat')
-    # list_display_links = ('no_kk', )
-    # search_fields = ('no_kk', 'nama_kepala', )
+    search_fields = ('no_kk', 'nama_kepala', )
 
 
 @admin.register(Domisili)

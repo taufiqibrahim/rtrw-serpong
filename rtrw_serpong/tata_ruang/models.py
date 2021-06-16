@@ -6,6 +6,8 @@ from django.db import models
 class BidangTanah(BaseModel):
     tipe_bidang_tanah = models.ForeignKey('master.TipeBidangTanah',
                                           on_delete=models.PROTECT)
+    pemilik = models.ForeignKey('kependudukan.Biodata', null=True, blank=True,
+                                on_delete=models.PROTECT)
     deskripsi = models.TextField()
     picture = models.ImageField(null=True, blank=True)
     geom = PolygonField()
@@ -27,6 +29,8 @@ class BidangTanah(BaseModel):
 class Bangunan(BaseModel):
     bidang_tanah = models.ForeignKey(
         BidangTanah, on_delete=models.PROTECT, null=True, blank=True)
+    pemilik = models.ForeignKey('kependudukan.Biodata', null=True, blank=True,
+                                on_delete=models.PROTECT)
     alamat = models.CharField(max_length=255)
     geom = PolygonField(null=True)
 
