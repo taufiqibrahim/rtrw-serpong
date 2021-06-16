@@ -33,9 +33,6 @@ class Bangunan(BaseModel):
                                 on_delete=models.PROTECT)
     alamat = models.CharField(max_length=255)
     geom = PolygonField(null=True)
-
-    # pemilik = TODO foreign to biodata
-
     # uu-no-28-tahun-2002-bangunan-gedung BAB III FUNGSI BANGUNAN GEDUNG Pasal 5 direkomendasikan menjadi data master
     fungsi = models.ForeignKey(
         'master.FungsiBangunan', on_delete=models.PROTECT)
@@ -49,3 +46,21 @@ class Bangunan(BaseModel):
             return self.alamat
         else:
             return self.pk
+
+
+class Ruangan(BaseModel):
+    bangunan = models.ForeignKey(Bangunan, null=True, blank=True,
+                                 on_delete=models.PROTECT)
+    nomor = models.CharField(max_length=3, blank=True, null=True)
+    disewakan = models.BooleanField(default=False)
+
+    class Meta:
+        verbose_name = 'Ruangan'
+        verbose_name_plural = 'Ruangan'
+        unique_together = ('bangunan', 'nomor', )
+
+    def __str__(self) -> str:
+        if self.nomor:
+            return f"{self.bangunan}:{str(self.nomor)}"
+        else:
+            return f"{self.bangunan}:{str(self.pk)}"

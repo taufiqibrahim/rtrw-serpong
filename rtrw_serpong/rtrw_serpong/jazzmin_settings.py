@@ -82,6 +82,7 @@ JAZZMIN_SETTINGS = {
         "kependudukan.domisili",
         "tata_ruang.bidangtanah",
         "tata_ruang.bangunan",
+        "tata_ruang.ruangan",
     ],
 
     # # Custom links to append to app groups, keyed on app name
