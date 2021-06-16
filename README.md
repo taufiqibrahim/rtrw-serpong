@@ -29,13 +29,21 @@ python manage.py runserver
 Buka browser anda di http://localhost:8000
 
 
-## Mencetak Ulang File Migrasi
+## Catatan
+
+### Memperbarui Static File
+```bash
+python manage.py collectstatic --noinput --clear
+```
+
+### Mencetak Ulang File Migrasi
 Bersihkan semua direktori migrasi:
 ```bash
-rm -rf master/migrations/ kependudukan/migrations/ tata_ruang/migrations/
+rm -rf db.sqlite3 master/migrations/ kependudukan/migrations/ tata_ruang/migrations/ home/migrations/
 ```
 
 Membuat ulang migrasi
 ```bash
-python manage.py makemigrations master kependudukan tata_ruang
+python manage.py makemigrations master kependudukan tata_ruang home
+python manage.py migrate
 ```
