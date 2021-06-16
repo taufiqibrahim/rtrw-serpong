@@ -2,6 +2,7 @@ from django.db import models
 from django import forms
 from common.models import BaseModel
 from master.models import Agama, GolonganDarah, HubunganKeluarga, JenisKelamin, Pendidikan, Pekerjaan, StatusKawin
+from tata_ruang.models import Bangunan, Ruangan
 
 
 class Keluarga(BaseModel):
@@ -133,6 +134,8 @@ class Biodata(BaseModel):
 
 class Domisili(BaseModel):
     biodata = models.ForeignKey(Biodata, on_delete=models.PROTECT)
+    rumah = models.ForeignKey(Bangunan, on_delete=models.PROTECT, null=True, blank=True)
+    indekos = models.ForeignKey(Ruangan, on_delete=models.PROTECT, null=True, blank=True)
     tanggal_mulai_tinggal = models.DateField()
     tanggal_akhir_tinggal = models.DateField(
         default=None, null=True, blank=True)

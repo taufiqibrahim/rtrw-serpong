@@ -3,7 +3,7 @@ from import_export import resources
 from common.admin import auto_list_display
 from import_export.admin import ImportExportModelAdmin
 from .models import Biodata, Domisili, Keluarga
-from .resources import BiodataResource, KeluargaResource
+from .resources import BiodataResource, DomisiliResource, KeluargaResource
 
 
 class BaseAuditedModelAdmin(admin.ModelAdmin):
@@ -29,14 +29,17 @@ class KeluargaAdmin(BaseAuditedModelAdmin, ImportExportModelAdmin):
 
 
 @admin.register(Domisili)
-class DomisiliAdmin(BaseAuditedModelAdmin):
-    pass
+class DomisiliAdmin(BaseAuditedModelAdmin, ImportExportModelAdmin):
+    resource_class = DomisiliResource
+    list_display = ('biodata', 'rumah', 'indekos',
+                    'tanggal_mulai_tinggal', 'tanggal_akhir_tinggal', )
 
 
-class DomisiliInlineAdmin(admin.TabularInline):
+class DomisiliInlineAdmin(admin.StackedInline):
     model = Domisili
     extra = 0
-    fields = ('tanggal_mulai_tinggal', 'tanggal_akhir_tinggal', )
+    fields = ('rumah', 'indekos', 'tanggal_mulai_tinggal',
+              'tanggal_akhir_tinggal', )
 
 
 @admin.register(Biodata)

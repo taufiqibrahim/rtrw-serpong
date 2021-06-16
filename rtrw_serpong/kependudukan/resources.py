@@ -1,6 +1,6 @@
 from import_export import fields, resources
 from import_export.widgets import ForeignKeyWidget
-from .models import Biodata, Keluarga
+from .models import Biodata, Domisili, Keluarga
 from master.models import Agama, GolonganDarah, HubunganKeluarga, JenisKelamin, Pendidikan, Pekerjaan, StatusKawin
 
 
@@ -64,5 +64,25 @@ class BiodataResource(resources.ModelResource):
             'nama_ketua_rt',
             'nama_ketua_rw',
             'keluarga',
+        )
+        export_order = fields
+
+
+class DomisiliResource(resources.ModelResource):
+
+    biodata = fields.Field(column_name='nik', attribute='biodata',
+                           widget=ForeignKeyWidget(Keluarga, 'nik'))
+
+    class Meta:
+        model = Domisili
+        import_id_fields = ('biodata',
+                            'tanggal_mulai_tinggal',
+                            'tanggal_akhir_tinggal',)
+        fields = (
+            'biodata',
+            'rumah',
+            'indekos',
+            'tanggal_mulai_tinggal',
+            'tanggal_akhir_tinggal',
         )
         export_order = fields
