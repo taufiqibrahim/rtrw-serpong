@@ -31,9 +31,35 @@ Buka browser anda di http://localhost:8000
 
 ## Catatan
 
+### Credentials di S3
+#### Upload
+```bash
+aws s3 cp docker/.env s3://rtrw-serpong/dev/docker/.env \
+&& aws s3 cp rtrw_serpong/.env s3://rtrw-serpong/dev/rtrw_serpong/.env \
+&& aws s3 cp rtrw_serpong/allauth_socialaccount.json s3://rtrw-serpong/dev/rtrw_serpong/allauth_socialaccount.json
+```
+
+#### Download
+```bash
+aws s3 cp s3://rtrw-serpong/dev/docker/.env docker/.env \
+&& aws s3 cp s3://rtrw-serpong/dev/rtrw_serpong/.env rtrw_serpong/.env \
+&& aws s3 cp s3://rtrw-serpong/dev/rtrw_serpong/allauth_socialaccount.json rtrw_serpong/allauth_socialaccount.json
+```
+
 ### Memperbarui Static File
 ```bash
 python manage.py collectstatic --noinput --clear
+```
+
+### Dump Social App
+Kita bisa menyimpan keluar data social app dengan cara berikut:
+```bash
+python manage.py dumpdata socialaccount > allauth_socialaccount.json
+```
+
+Sehingga, kita bisa menggunakannya untuk load sebagai fixture:
+```bash
+python manage.py loaddata allauth_socialaccount.json
 ```
 
 ### Mencetak Ulang File Migrasi

@@ -166,6 +166,7 @@ Thumbs.db
 env.py
 allauth_settings.py
 wagtail_settings.py
+allauth_socialaccount.json
 
 # End of https://www.toptal.com/developers/gitignore/api/django
 
