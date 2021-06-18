@@ -28,6 +28,12 @@ python manage.py runserver
 
 Buka browser anda di http://localhost:8000
 
+## Deploy Menggunakan Docker
+
+```bash
+cd docker
+docker-compose -f docker-compose.yml up -d
+```
 
 ## Catatan
 
