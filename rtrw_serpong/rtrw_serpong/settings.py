@@ -11,13 +11,11 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 import os
-from .env import *
 from .allauth_settings import SOCIALACCOUNT_PROVIDERS
 from .jazzmin_settings import JAZZMIN_SETTINGS
 from .leaflet_settings import LEAFLET_CONFIG
 from .wagtail_settings import WAGTAIL_INSTALLED_APPS, WAGTAIL_MIDDLEWARE, WAGTAIL_SITE_NAME
 from distutils.util import strtobool
-from dotenv import load_dotenv
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -26,10 +24,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Load configuration from .env
 # ENV_PATH = os.path.join(BASE_DIR, ".env")
 # load_dotenv(ENV_PATH)
-
-os.environ['DJANGO_SECRET_KEY'] = DJANGO_SECRET_KEY
-os.environ['DJANGO_DEBUG'] = DJANGO_DEBUG
-os.environ['DJANGO_ADMIN_ENABLE_MASTER'] = DJANGO_ADMIN_ENABLE_MASTER
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
@@ -40,7 +34,7 @@ SECRET_KEY = os.environ['DJANGO_SECRET_KEY']
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = strtobool(os.environ['DJANGO_DEBUG'])
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS").split(",")
 
 
 # Application definition
@@ -113,9 +107,17 @@ WSGI_APPLICATION = 'rtrw_serpong.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': BASE_DIR / 'db.sqlite3',
+    # },
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.environ['POSTGRES_DB'],
+        'USER': os.environ['POSTGRES_USER'],
+        'PASSWORD': os.environ['POSTGRES_PASSWORD'],
+        'HOST': os.environ['POSTGRES_HOST'],
+        'PORT': os.environ['POSTGRES_PORT'],
     }
 }
 
@@ -157,6 +159,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
@@ -176,9 +179,9 @@ AUTHENTICATION_BACKENDS = [
     'allauth.account.auth_backends.AuthenticationBackend',
 ]
 
-if DEBUG:
-    STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-    MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-    MEDIA_URL = '/media/'
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
+LOGIN_REDIRECT_URL = '/'

@@ -1,12 +1,15 @@
 Django
+django-allauth
 django-import-export
 django-geojson
 django-jazzmin
 django-leaflet
 django_perms_provisioner
 django-storages
+gunicorn
 jsonfield
 Pillow
+psycopg2-binary
 python-dotenv
 wagtail
 wagtailcodeblock

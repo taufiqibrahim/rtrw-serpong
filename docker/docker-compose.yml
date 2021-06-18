@@ -1,17 +1,6 @@
-version: "3"
+version: "3.7"
 
 services:
-
-#   redis:
-#     restart: always
-#     container_name: redis
-#     image: redis
-#     networks:
-#       - django-net
-#     logging:
-#       driver: "json-file"
-#       options:
-#         max-size: "50m"
 
   django:
     restart: always
@@ -20,15 +9,15 @@ services:
     build:
       context: ..
       dockerfile: docker/Dockerfile
-    entrypoint: docker/entrypoint.sh
+    env_file: .env
     networks:
-      - nginx_net
-      - django-net
+      - rtrwserpong_net
     ports:
       - 8000:8000
     volumes:
-      - ./rtrw_serpong:/code/
-    #   - django_static_volume:/code/bizzydataoperation/static
+      # - ./rtrw_serpong:/code/
+      - django_static_volume:/code/static
+      - django_media_volume:/code/media
     # depends_on:
     #   - redis
     logging:
@@ -36,58 +25,10 @@ services:
       options:
         max-size: "50m"
 
-#   celery:
-#     restart: always
-#     container_name: celery
-#     build:
-#       context: .
-#       dockerfile: ./Dockerfile
-#     command: celery -A bizzydataoperation worker
-#     volumes:
-#       - ./bizzydataoperation:/code/bizzydataoperation/
-#     environment:
-#       - CELERY_BROKER=redis://redis:6379/0
-#       - CELERY_BACKEND=redis://redis:6379/0
-#     depends_on:
-#       - django
-#       - redis
-#     networks:
-#       - django-net
-#     logging:
-#       driver: "json-file"
-#       options:
-#         max-size: "50m"
-
-#   flower:
-#     restart: always
-#     container_name: flower
-#     build:
-#       context: .
-#       dockerfile: ./Dockerfile
-#     command:  flower -A bizzydataoperation --port=5555 --broker=redis://redis:6379/0
-#     ports:
-#       - 5555:5555
-#     volumes:
-#       - ./bizzydataoperation:/code/bizzydataoperation/
-#     environment:
-#       - CELERY_BROKER=redis://redis:6379/0
-#       - CELERY_BACKEND=redis://redis:6379/0
-#     depends_on:
-#       - django
-#       - redis
-#       - celery
-#     networks:
-#       - django-net
-#     logging:
-#       driver: "json-file"
-#       options:
-#         max-size: "50m"
-
-
 networks:
-  django-net:
-  nginx_net:
+  rtrwserpong_net:
     external: true
 
 volumes:
   django_static_volume:
+  django_media_volume:

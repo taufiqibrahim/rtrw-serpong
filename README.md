@@ -66,6 +66,9 @@ python manage.py dumpdata socialaccount > allauth_socialaccount.json
 Sehingga, kita bisa menggunakannya untuk load sebagai fixture:
 ```bash
 python manage.py loaddata allauth_socialaccount.json
+
+# atau dengan Docker
+docker exec -it django python manage.py loaddata allauth_socialaccount.json
 ```
 
 ### Mencetak Ulang File Migrasi
