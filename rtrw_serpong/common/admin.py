@@ -30,3 +30,4 @@ class BaseAuditedModelAdmin(admin.ModelAdmin):
 
 class BaseAuditedLeafletGeoModelAdmin(BaseAuditedModelAdmin, LeafletGeoAdmin):
     readonly_fields = AUDIT_FIELDS
+    map_width = 'calc(100%)'
