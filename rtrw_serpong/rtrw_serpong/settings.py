@@ -73,9 +73,13 @@ INSTALLED_APPS = [
     # 'aplikasi',
 ]
 
+if DEBUG:
+    INSTALLED_APPS += ['debug_toolbar', 'pattern_library', ]
+
 INSTALLED_APPS += WAGTAIL_INSTALLED_APPS
 
 MIDDLEWARE = [
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -86,6 +90,11 @@ MIDDLEWARE = [
 ]
 
 MIDDLEWARE += WAGTAIL_MIDDLEWARE
+
+if not DEBUG:
+    del MIDDLEWARE[0]
+
+INTERNAL_IPS = ['127.0.0.1', ]
 
 ROOT_URLCONF = 'rtrw_serpong.urls'
 
@@ -100,6 +109,9 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+            ],
+            "builtins": [
+                "pattern_library.loader_tags"
             ],
         },
     },
@@ -193,3 +205,24 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 LOGIN_REDIRECT_URL = '/'
+
+PATTERN_LIBRARY = {
+    # Groups of templates for the pattern library navigation. The keys
+    # are the group titles and the values are lists of template name prefixes that will
+    # be searched to populate the groups.
+    "SECTIONS": (
+        ("components", ["patterns/components"]),
+        ("pages", ["patterns/pages"]),
+    ),
+
+    # Configure which files to detect as templates.
+    "TEMPLATE_SUFFIX": ".html",
+
+    # Set which template components should be rendered inside of,
+    # so they may use page-level component dependencies like CSS.
+    "PATTERN_BASE_TEMPLATE_NAME": "patterns/base.html",
+
+    # Any template in BASE_TEMPLATE_NAMES or any template that extends a template in
+    # BASE_TEMPLATE_NAMES is a "page" and will be rendered as-is without being wrapped.
+    "BASE_TEMPLATE_NAMES": ["patterns/base_page.html"],
+}

@@ -13,6 +13,7 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from django.apps import apps
 from django.conf.urls import url
 from django.conf import settings
 from django.contrib import admin
@@ -29,10 +30,11 @@ admin.site.site_title = _('Administrasi RT RW')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('cms-admin/', include(wagtailadmin_urls)),
+    # path('cms-admin/', include(wagtailadmin_urls)),
     path('accounts/', include('allauth.urls')),
     # path('documents/', include(wagtaildocs_urls)),
     # path('pages/', include(wagtail_urls)),
+    # url(r'', include(wagtail_urls)),
 ]
 
 
@@ -60,6 +62,20 @@ if settings.DEBUG:
         url(r'^test500/$', TemplateView.as_view(template_name='500.html')),
     ]
 
+    # if apps.is_installed("pattern_library"):
+    urlpatterns += [
+        path("pattern-library/", include("pattern_library.urls")),
+    ]
+
+    import debug_toolbar
+    urlpatterns += [
+        url(r'^__debug__/', include(debug_toolbar.urls)),
+    ]
+
+# Wagtail
 urlpatterns += [
+    path('cms-admin/', include(wagtailadmin_urls)),
+    # path('documents/', include(wagtaildocs_urls)),
+    # path('pages/', include(wagtail_urls)),
     url(r'', include(wagtail_urls)),
 ]
