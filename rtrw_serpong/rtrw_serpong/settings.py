@@ -64,8 +64,9 @@ INSTALLED_APPS = [
     'import_export',
     'django_perms_provisioner',
 
-    # 'cms',
+    # Wagtail
     'home',
+    'menus',
 
     'master',
     'kependudukan',
@@ -101,7 +102,7 @@ ROOT_URLCONF = 'rtrw_serpong.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates', ],
+        'DIRS': ['rtrw_serpong/templates', ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -109,6 +110,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'wagtailmenus.context_processors.wagtailmenus',
             ],
             "builtins": [
                 "pattern_library.loader_tags"
