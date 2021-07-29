@@ -18,5 +18,5 @@ python manage.py collectstatic --noinput
 
 # # Start server
 echo "Starting server"
-# python manage.py runserver 0.0.0.0:8000
-gunicorn -b 0.0.0.0:8000 rtrw_serpong.wsgi
+python manage.py runserver 0.0.0.0:8000
+# gunicorn -b 0.0.0.0:8000 rtrw_serpong.wsgi

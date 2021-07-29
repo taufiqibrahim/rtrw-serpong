@@ -173,3 +173,4 @@ allauth_socialaccount.json
 static/
 
 nginx.conf
+docker.env

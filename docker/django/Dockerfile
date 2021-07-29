@@ -16,4 +16,6 @@ RUN pip install -r requirements.txt
 RUN pwd
 RUN ls
 
+RUN apt-get clean
+
 ENTRYPOINT [ "/code/entrypoint.sh" ]
