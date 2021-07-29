@@ -1,0 +1,41 @@
+version: "3.8"
+
+services:
+
+  postgresql:
+    container_name: rtrw_serpong_postgres
+    image: postgis/postgis:latest
+    # env_file: postgres/docker.env
+    env_file: docker.env
+    ports:
+      - 25432:5432
+    volumes:
+      - pgdata:/var/lib/postgresql/data:z
+    # networks:
+    #   - rtrwserpong_net
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "50m"
+
+  nginx:
+    container_name: rtrw_serpong_nginx
+    image: nginx:alpine
+    restart: always
+    env_file: docker.env
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+      # - django_static_volume:/usr/share/nginx/html/
+    ports:
+      - 20080:80
+  #   # networks:
+  #   #   - nginx_net
+
+# networks:
+#   rtrwserpong_net:
+#     external: true
+
+volumes:
+  django_static_volume:
+  django_media_volume:
+  pgdata:
